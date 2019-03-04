@@ -6,13 +6,14 @@
             <th>Nom</th>
             <th>Age</th>
         </thead>
-        <tbody>
-            @foreach (Johnson.Models.Client client in Clients) {
-                <tr>
-                    <td>@client.Nom</td>
-                    <td>@client.Age</td>
-                </tr>
-            }
-        </tbody>
+            <tbody>
+                @foreach (Johnson.Models.Client client in ViewData["Clients"])
+                {
+                    <tr>
+                        <td>@client.Nom</td>
+                        <td>@client.Age</td>
+                    </tr>
+                }
+            </tbody>
     </table>
 </div>
