@@ -7,7 +7,7 @@
             <th>Age</th>
         </thead>
             <tbody>
-                @foreach (Johnson.Models.Client client in ViewData["Clients"])
+                @foreach (Johnson.Models.Client client in ViewData["Clients"] as List<Johnson.Models.Client>)
                 {
                     <tr>
                         <td>@client.Nom</td>
