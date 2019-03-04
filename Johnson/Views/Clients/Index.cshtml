@@ -1,0 +1,18 @@
+﻿<div class="container-fluid">
+    <h1>Clients List<h1>
+
+    <table class="table table-responsive-lg table-striped table-hover">
+        <thead>
+            <th>Nom</th>
+            <th>Age</th>
+        </thead>
+        <tbody>
+            @foreach (Johnson.Models.Client client in Clients) {
+                <tr>
+                    <td>@client.Nom</td>
+                    <td>@client.Age</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
