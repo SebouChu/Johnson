@@ -17,5 +17,17 @@ namespace Johnson.Controllers
 
             return View();
         }
+
+        public ActionResult Search(string query)
+        {
+            Clients clients = new Clients();
+            List<Client> results = HttpContext.Request.HttpMethod == "POST" ? clients.searchClients(query)
+                                                                            : new List<Client>();
+            ViewData["Results"] = results;
+            ViewData["ResultsCount"] = results.Count;
+            ViewData["Query"] = query;
+
+            return View();
+        }
     }
 }

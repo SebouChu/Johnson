@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Clients\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-3.0.0.slim.min.map" />

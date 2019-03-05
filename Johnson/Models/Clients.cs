@@ -15,5 +15,22 @@ namespace Johnson.Models
                 new Client { Nom = "Corentin", Age = 13 }
             };
         }
+
+        public List<Client> searchClients(string query)
+        {
+            if (string.IsNullOrEmpty(query)) {
+                return new List<Client>();
+            }
+
+            query = query.ToLower();
+            List<Client> list = getClientsList().FindAll(
+            delegate (Client client)
+            {
+                return client.Nom.ToLower().Contains(query);
+            }
+            );
+
+            return list;
+        }
     }
 }

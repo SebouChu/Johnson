@@ -1,0 +1,39 @@
+﻿<div class="container-fluid">
+    <h1>Search</h1>
+
+    <a class="btn btn-outline-primary mb-4" href="/Clients">Return to List</a>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-6">
+            <form method="post" action="/Clients/Search">
+                <div class="form-group d-flex">
+                    <input class="form-control mr-4" name="query" placeholder="ex: Jack" value="@ViewData["Query"]" required />
+                    <input class="btn btn-primary" type="submit" value="Search" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if ((int) ViewData["ResultsCount"] > 0) {
+        <hr />
+
+        <h2 class="mb-1">Results</h2>
+        <p class="small text-muted mt-0">Count : @ViewData["ResultsCount"]</p>
+
+        <table class="table table-responsive-lg table-striped table-hover">
+            <thead>
+                <th>Nom</th>
+                <th>Age</th>
+            </thead>
+            <tbody>
+                @foreach (Johnson.Models.Client client in ViewData["Results"] as List<Johnson.Models.Client>)
+                {
+                    <tr>
+                        <td>@client.Nom</td>
+                        <td>@client.Age</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
